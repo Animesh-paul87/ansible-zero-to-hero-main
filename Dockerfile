@@ -4,7 +4,7 @@ RUN apk add --no-cache openssh ansible openssh-client\
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config \
     && sed -i 's/#UsePAM no/UsePAM no/' /etc/ssh/sshd_config \
-    && echo "root:password123456789" | chpasswd 
+    && echo "root:changeme" | chpasswd 
     
 COPY entrypoint.sh /entrypoint.sh
 RUN ls -l /
