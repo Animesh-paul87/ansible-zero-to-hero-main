@@ -3,7 +3,7 @@ RUN apk add --no-cache openssh ansible openssh-client \
     && ssh-keygen -A \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config \
-    && echo "root:password123456789" | chpasswd \
+    && echo "root:usepasswordhere" | chpasswd \
     && : > /etc/motd \
     && apk add --no-cache py3-pip \
     && mkdir -p /ansible \
